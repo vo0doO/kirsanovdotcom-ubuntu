@@ -1,0 +1,1 @@
+gcloud compute --project "projectvo0do0s" ssh --zone "asia-east1-a" "kirsadotcom"

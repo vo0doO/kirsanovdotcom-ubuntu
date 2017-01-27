@@ -16,13 +16,13 @@
   limitations under the License
 -->
 
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Сайт Кирсанова Данилы Олеговича">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <title>Кирсанов Данила Олегович</title>
+    <title>Резюме - Кирсанова Даниэля Олеговича</title>
 
     <!-- Page styles -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=ru">
@@ -42,7 +42,38 @@
     </style>
   </head>
   <body>
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <script>
+    /*global navigator*/
+  function getCoords() { 
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(userCoord)
+      };
+      
+    function showCoords(position) {
+      var pos = {
+      lat: position.coords.latitude,
+      lng: position.coords.longitude,
+      accu: position.coords.accuracy,
+      speed: position.coords.speed,
+      heading: position.coords.heading,
+      alt: position.coords.altitude,
+      altitudeAccuracy: position.coords.altitudeAccuracy
+      };
+    };
+    
+    function getCoordinates() {
+   watchID = navigator.geolocation.watchPosition(showCoordinates);
+}
+
+function stop() {
+   if (watchID) {
+      navigator.geolocation.clearWatch(watchID);
+      watchID = null;
+   }
+}
+    </script>
+    
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
       <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
         <div class="mdl-layout__header-row">
@@ -322,7 +353,10 @@
         </footer>
       </div>
     </div>
-    <a href="https://github.com/google/material-design-lite/blob/mdl-1.x/templates/android-dot-com/" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">View Source</a>
+    <a href="https://github.com/google/material-design-lite/blob/mdl-1.x/templates/android-dot-com/" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">Стать успешным</a>
     <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    
+    
   </body>
 </html>

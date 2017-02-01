@@ -46,10 +46,10 @@
     /*global navigator*/
   function getCoords() { 
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(userCoord)
+      navigator.geolocation.getCurrentPosition(position)
       };
       
-    function showCoords(position) {
+    function showCoords(getCoords) {
       var pos = {
       lat: position.coords.latitude,
       lng: position.coords.longitude,
@@ -61,7 +61,7 @@
       };
     };
     
-    function writeUserCoords() {
+    /*function writeUserCoords() {
       if (navigator.geolacation.getCurrentPosition()) {
              var usrlat = document.write(position.coord.latitude);
              var usrlng = document.write(position.coord.longitude);
@@ -70,18 +70,7 @@
              var usrheading = document.write(position.coord.heading);
              var usraltitude = document.write(position.coord.altitude);
              var usraltitudeaccuracy = document.write(position.coord.altitudeAccuracy)
-    }
-    
-    function getCoordinates() {
-   watchID = navigator.geolocation.watchPosition(showCoordinates);
-}
-
-function stop() {
-   if (watchID) {
-      navigator.geolocation.clearWatch(watchID);
-      watchID = null;
-   }
-}
+    }*/
     </script>
     
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
